@@ -2,6 +2,7 @@ package com.practice.hiltpractice.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.practice.hiltpractice.OptionsFragment
 import com.practice.hiltpractice.R
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         savedInstanceState ?: supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragmentContainerView, LandingFragment.instance("HiltPractice"))
+            .replace(R.id.fragmentContainerView, OptionsFragment())
             .commit()
     }
 }

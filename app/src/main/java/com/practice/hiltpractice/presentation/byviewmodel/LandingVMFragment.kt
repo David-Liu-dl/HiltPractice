@@ -1,4 +1,4 @@
-package com.practice.hiltpractice.presentation
+package com.practice.hiltpractice.presentation.byviewmodel
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -12,19 +12,19 @@ import com.practice.hiltpractice.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LandingFragment : Fragment(R.layout.fragment_landing) {
+class LandingVMFragment : Fragment(R.layout.fragment_landing) {
     companion object {
         const val PASSED_IN_INFO = "passed_in_info"
         const val RETAINED_INFO = "retained_info"
 
-        fun instance(tracking: String) = LandingFragment().apply {
+        fun instance(tracking: String) = LandingVMFragment().apply {
             arguments = Bundle().apply {
                 putString(PASSED_IN_INFO, tracking)
             }
         }
     }
 
-    private val viewModel: LandingViewModel by viewModels()
+    private val viewModel: LandingVMViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
